@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Letter — Luna</title>
+<link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/envelope.css">
+</head>
+<body>
+<main class="envelope-page page-shell" id="scene">
+  <div class="scene-stars"></div>
+  <div class="scene-glow"></div>
+
+  <section class="envelope-stage">
+    <div class="scene-caption" id="sceneCaption">A letter is waiting for you...</div>
+
+    <div class="envelope-wrap" id="envelopeWrap">
+      <img class="envelope" src="assets/envelope.png" alt="A cream envelope">
+      <button class="wax-button" id="waxButton" aria-label="Open Luna's wax seal">
+        <img src="assets/waxseal.png" alt="Luna wax seal">
+        <span class="seal-crack crack-a"></span>
+        <span class="seal-crack crack-b"></span>
+      </button>
+      <div class="seal-hint" id="sealHint">Tap the seal</div>
+    </div>
+
+    <div class="letter-wrap" id="letterWrap" aria-hidden="true">
+      <img class="letter-paper" src="assets/letter.png" alt="Letter paper">
+      <div class="letter-content">
+        <div class="letter-small">FOR LUNA</div>
+        <div class="handwriting" id="handwriting"></div>
+        <span class="cursor" id="cursor"></span>
+        <div class="signature">— with a little magic ✦</div>
+      </div>
+      <div class="quill" id="quill" aria-hidden="true">🪶</div>
+    </div>
+  </section>
+
+  <button class="continue-btn" id="continueBtn" hidden>
+    Continue to the Chapters <span>→</span>
+  </button>
+</main>
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/envelope.js"></script>
+</body>
+</html>

@@ -1,0 +1,477 @@
+
+/* ============================================================
+   CHAPTER BOARD
+   Shared board only. Individual chapter designs stay isolated.
+   ============================================================ */
+
+.board-page {
+  min-height:100svh;
+  padding:clamp(24px,5vw,64px);
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  background:#050611;
+}
+
+.board-page::before {
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-4;
+  background:
+    linear-gradient(180deg,rgba(3,5,14,.36),rgba(3,5,14,.78)),
+    url("../assets/moon1.jpg") center/cover no-repeat;
+  transform:scale(1.04);
+  filter:saturate(.72) contrast(1.04);
+}
+
+.board-page::after {
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  background:
+    radial-gradient(circle at 50% 28%,rgba(255,226,164,.12),transparent 28%),
+    linear-gradient(90deg,rgba(0,0,0,.52),transparent 25%,transparent 75%,rgba(0,0,0,.52));
+  pointer-events:none;
+}
+
+.board-page {
+  color:#f6efe3;
+}
+
+.board-header {
+  max-width:1220px;
+  margin:0 auto 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:20px;
+}
+
+.eyebrow {
+  color:#f2cf8a;
+  font-size:.62rem;
+  letter-spacing:.3em;
+}
+
+.board-header h1 {
+  font-family:Cormorant Garamond,serif;
+  font-weight:500;
+  font-size:clamp(2.4rem,5.5vw,4.8rem);
+  line-height:.9;
+  margin:.3rem 0 0;
+  text-shadow:0 5px 35px rgba(0,0,0,.55);
+}
+
+.home-link {
+  border:1px solid rgba(255,239,208,.24);
+  padding:9px 14px;
+  border-radius:999px;
+  color:#e7ddcc;
+  background:rgba(255,255,255,.055);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  text-decoration:none;
+}
+
+.status-panel {
+  max-width:1220px;
+  margin:0 auto 26px;
+  padding:20px 22px;
+  border:1px solid rgba(255,238,202,.18);
+  border-radius:22px;
+  background:linear-gradient(135deg,rgba(255,255,255,.105),rgba(255,255,255,.025));
+  box-shadow:0 18px 55px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.08);
+  backdrop-filter:blur(18px) saturate(115%);
+  -webkit-backdrop-filter:blur(18px) saturate(115%);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.status-copy span,
+.main-timer span {
+  display:block;
+  color:rgba(255,242,215,.52);
+  font-size:.58rem;
+  letter-spacing:.22em;
+}
+
+.status-copy strong {
+  display:block;
+  font-family:Cinzel,serif;
+  font-size:1.25rem;
+  color:#f8dfad;
+  margin:5px 0 3px;
+}
+
+.status-copy small {
+  color:rgba(232,224,211,.64);
+}
+
+.main-timer {
+  text-align:right;
+}
+
+.main-timer strong {
+  display:block;
+  color:#ffe8b2;
+  font-size:1rem;
+  letter-spacing:.05em;
+  margin-top:5px;
+  font-variant-numeric:tabular-nums;
+}
+
+.birthday-banner {
+  max-width:1220px;
+  margin:0 auto 26px;
+  padding:18px 22px;
+  border-radius:22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  background:linear-gradient(135deg,rgba(255,226,157,.16),rgba(255,255,255,.04));
+  border:1px solid rgba(245,198,109,.4);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  animation:birthdayBoom 1.2s cubic-bezier(.2,.9,.2,1) both;
+}
+
+.birthday-banner .boom {
+  font-size:3rem;
+  animation:float 1.7s ease-in-out infinite;
+}
+
+.birthday-banner strong {
+  display:block;
+  font-family:Cinzel,serif;
+  color:#ffe7a7;
+  letter-spacing:.12em;
+}
+
+.birthday-banner span {
+  display:block;
+  color:#c7bdad;
+  margin-top:4px;
+}
+
+@keyframes birthdayBoom {
+  0%{opacity:0;transform:scale(.3);filter:blur(10px)}
+  65%{transform:scale(1.06)}
+  100%{opacity:1;transform:scale(1);filter:none}
+}
+
+.chapter-board {
+  max-width:1220px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(10,minmax(0,1fr));
+  gap:12px;
+}
+
+.chapter-card {
+  min-height:92px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:18px;
+  color:#f4ecde;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.025));
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.22),
+    inset 0 1px rgba(255,255,255,.09);
+  backdrop-filter:blur(15px) saturate(120%);
+  -webkit-backdrop-filter:blur(15px) saturate(120%);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease,background .3s ease;
+}
+
+.chapter-card::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent 15%,rgba(255,255,255,.07) 48%,transparent 75%);
+  transform:translateX(-120%);
+  transition:transform .7s ease;
+}
+
+.chapter-card:hover::before {
+  transform:translateX(120%);
+}
+
+.chapter-card .num {
+  position:relative;
+  z-index:1;
+  font-family:Cinzel,serif;
+  font-size:1.35rem;
+  letter-spacing:.04em;
+}
+
+.chapter-card .date {
+  position:relative;
+  z-index:1;
+  font-size:.57rem;
+  color:rgba(233,224,209,.58);
+  margin-top:6px;
+  letter-spacing:.06em;
+}
+
+.chapter-card.unlocked {
+  border-color:rgba(245,198,109,.35);
+  cursor:pointer;
+}
+
+.chapter-card.unlocked:hover {
+  transform:translateY(-5px);
+  border-color:rgba(255,226,160,.78);
+  background:linear-gradient(145deg,rgba(255,236,192,.14),rgba(255,255,255,.035));
+  box-shadow:
+    0 18px 38px rgba(0,0,0,.32),
+    0 0 28px rgba(245,198,109,.08),
+    inset 0 1px rgba(255,255,255,.14);
+}
+
+.chapter-card.current {
+  box-shadow:
+    0 0 0 1px rgba(245,198,109,.5),
+    0 0 34px rgba(245,198,109,.12),
+    inset 0 1px rgba(255,255,255,.13);
+}
+
+.chapter-card.locked {
+  filter:saturate(.55);
+  opacity:.72;
+  cursor:not-allowed;
+}
+
+.chapter-card.locked::after {
+  content:"✦";
+  position:absolute;
+  right:9px;
+  top:7px;
+  color:rgba(255,231,176,.45);
+  font-size:.62rem;
+}
+
+.chapter-card.birthday {
+  border-color:rgba(255,210,130,.52);
+}
+
+footer {
+  max-width:1220px;
+  margin:24px auto 0;
+  display:flex;
+  justify-content:space-between;
+  color:rgba(232,224,211,.42);
+  font-size:.64rem;
+  letter-spacing:.03em;
+}
+
+@media(max-width:900px) {
+  .chapter-board {grid-template-columns:repeat(6,1fr)}
+}
+
+@media(max-width:560px) {
+  .board-page {padding:20px 12px 26px}
+  .board-header {align-items:flex-start}
+  .status-panel {flex-direction:column;align-items:flex-start}
+  .main-timer {text-align:left}
+  .chapter-board {grid-template-columns:repeat(5,1fr);gap:8px}
+  .chapter-card {min-height:78px;border-radius:14px}
+  .chapter-card .num {font-size:1.05rem}
+  .chapter-card .date {font-size:.47rem}
+  footer {flex-direction:column;gap:5px}
+}
+
+
+/* ============================================================
+   RESPONSIVE BOARD
+   ============================================================ */
+
+.board-page {
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100svh;
+  padding-bottom: max(28px, env(safe-area-inset-bottom));
+}
+
+@media (max-width: 1100px) {
+  .board-page {
+    padding-inline: clamp(18px, 4vw, 40px);
+  }
+
+  .chapter-board {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .chapter-card {
+    min-height: 86px;
+  }
+}
+
+@media (max-width: 800px) {
+  .board-page {
+    padding: 28px 18px max(30px, env(safe-area-inset-bottom));
+  }
+
+  .board-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+
+  .board-header h1 {
+    font-size: clamp(2.2rem, 7vw, 3.7rem);
+  }
+
+  .home-link {
+    flex: 0 0 auto;
+  }
+
+  .status-panel {
+    padding: 17px 18px;
+    margin-bottom: 20px;
+  }
+
+  .chapter-board {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .chapter-card {
+    min-height: 82px;
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 560px) {
+  .board-page {
+    padding: 20px 12px max(28px, env(safe-area-inset-bottom));
+  }
+
+  .board-header {
+    gap: 12px;
+  }
+
+  .eyebrow {
+    font-size: .54rem;
+    letter-spacing: .18em;
+  }
+
+  .board-header h1 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+    line-height: .98;
+  }
+
+  .home-link {
+    padding: 8px 11px;
+    font-size: .7rem;
+  }
+
+  .status-panel {
+    gap: 12px;
+    padding: 15px;
+    border-radius: 18px;
+  }
+
+  .status-copy span,
+  .main-timer span {
+    font-size: .5rem;
+    letter-spacing: .14em;
+  }
+
+  .status-copy strong {
+    font-size: 1rem;
+  }
+
+  .status-copy small {
+    font-size: .68rem;
+    line-height: 1.4;
+  }
+
+  .main-timer strong {
+    font-size: .85rem;
+  }
+
+  .birthday-banner {
+    padding: 14px;
+    gap: 12px;
+    text-align: left;
+    justify-content: flex-start;
+    border-radius: 18px;
+  }
+
+  .birthday-banner .boom {
+    font-size: 2.2rem;
+    flex: 0 0 auto;
+  }
+
+  .birthday-banner strong {
+    font-size: .78rem;
+  }
+
+  .birthday-banner span {
+    font-size: .68rem;
+    line-height: 1.4;
+  }
+
+  .chapter-board {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .chapter-card {
+    min-height: 82px;
+    border-radius: 14px;
+  }
+
+  .chapter-card .num {
+    font-size: 1rem;
+  }
+
+  .chapter-card .date {
+    max-width: 90%;
+    font-size: .43rem;
+    line-height: 1.25;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  footer {
+    margin-top: 20px;
+    font-size: .58rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .board-page {
+    padding-inline: 9px;
+  }
+
+  .chapter-board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .chapter-card {
+    min-height: 78px;
+  }
+}
+
+@media (hover: none) {
+  .chapter-card.unlocked:hover {
+    transform: none;
+  }
+
+  .chapter-card:hover::before {
+    transform: translateX(-120%);
+  }
+}

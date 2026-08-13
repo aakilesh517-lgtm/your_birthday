@@ -1,0 +1,154 @@
+.chapter-page {
+  --accent:#f0b95c;
+  background:
+    radial-gradient(circle at 50% 12%, color-mix(in srgb, var(--accent) 13%, transparent), transparent 30%),
+    #050608;
+  min-height:100vh; padding:clamp(24px,5vw,70px);
+  display:flex; align-items:center; justify-content:center;
+}
+.chapter-card-shell {
+  width:min(900px,94vw); padding:clamp(28px,6vw,70px);
+  border:1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius:28px; background:rgba(255,255,255,.025);
+  box-shadow:0 30px 90px rgba(0,0,0,.4);
+  text-align:center; position:relative; overflow:hidden;
+  animation:fadeIn 1s ease both;
+}
+.chapter-card-shell:before {
+  content:""; position:absolute; width:280px; height:280px; border-radius:50%;
+  background:color-mix(in srgb, var(--accent) 10%, transparent);
+  filter:blur(50px); left:50%; top:-140px; transform:translateX(-50%);
+}
+.back-link {
+  position:absolute; top:20px; left:24px; color:#9c968b; font-size:.75rem;
+}
+.chapter-kicker { color:var(--accent); letter-spacing:.3em; font-size:.65rem; }
+.chapter-number {
+  font-family:Cinzel,serif; font-size:clamp(4rem,12vw,8rem); line-height:.9;
+  color:transparent; -webkit-text-stroke:1px color-mix(in srgb, var(--accent) 65%, white);
+  margin:18px 0;
+}
+.chapter-title { font-family:"Cormorant Garamond",serif; font-size:clamp(2rem,5vw,4rem); margin:0 0 12px; }
+.chapter-date { color:#8f8a80; font-size:.75rem; letter-spacing:.12em; }
+.chapter-message {
+  max-width:650px; margin:28px auto; color:#d5cec2;
+  font-family:"Cormorant Garamond",serif; font-size:clamp(1.2rem,2.5vw,1.6rem); line-height:1.6;
+}
+.chapter-divider { width:100px; height:1px; background:var(--accent); margin:25px auto; opacity:.45; }
+.chapter-continue {
+  display:inline-block; margin-top:8px; padding:11px 18px; border-radius:999px;
+  border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  color:#eadfcb; background:rgba(255,255,255,.025);
+}
+.chapter-continue:hover { background:color-mix(in srgb, var(--accent) 10%, transparent); }
+.final-page .chapter-card-shell { border-color:rgba(255,190,90,.6); }
+.final-page .chapter-number { -webkit-text-stroke:1px #ffe1a0; text-shadow:0 0 30px rgba(255,190,80,.25); }
+
+
+/* ============================================================
+   RESPONSIVE CHAPTER SHELL
+   ============================================================ */
+
+.chapter-page {
+  min-height: 100svh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.chapter-card-shell {
+  max-width: 900px;
+}
+
+@media (max-width: 900px) {
+  .chapter-page {
+    align-items: flex-start;
+    padding: 42px 18px max(42px, env(safe-area-inset-bottom));
+  }
+
+  .chapter-card-shell {
+    width: min(760px, 100%);
+    padding: 58px 38px 42px;
+    border-radius: 24px;
+  }
+
+  .chapter-number {
+    font-size: clamp(4rem, 16vw, 7rem);
+  }
+
+  .chapter-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+  }
+
+  .chapter-message {
+    max-width: 620px;
+    font-size: clamp(1.15rem, 3vw, 1.45rem);
+  }
+
+  .back-link {
+    top: 18px;
+    left: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .chapter-page {
+    padding: 20px 12px max(30px, env(safe-area-inset-bottom));
+  }
+
+  .chapter-card-shell {
+    width: 100%;
+    padding: 58px 20px 28px;
+    border-radius: 20px;
+  }
+
+  .back-link {
+    top: 17px;
+    left: 18px;
+    font-size: .68rem;
+  }
+
+  .chapter-kicker {
+    font-size: .56rem;
+    letter-spacing: .2em;
+  }
+
+  .chapter-number {
+    font-size: clamp(4rem, 24vw, 6rem);
+    margin: 15px 0;
+  }
+
+  .chapter-title {
+    font-size: clamp(1.8rem, 9vw, 2.8rem);
+    line-height: 1.08;
+  }
+
+  .chapter-date {
+    font-size: .64rem;
+  }
+
+  .chapter-message {
+    margin: 22px auto;
+    font-size: 1.08rem;
+    line-height: 1.55;
+  }
+
+  .chapter-divider {
+    margin: 20px auto;
+  }
+
+  .chapter-continue {
+    width: min(100%, 300px);
+    padding: 12px 16px;
+    font-size: .78rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .chapter-card-shell {
+    padding-inline: 16px;
+  }
+
+  .chapter-message {
+    font-size: 1rem;
+  }
+}

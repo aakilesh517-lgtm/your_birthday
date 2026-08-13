@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 29</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="page">
+
+<header class="top">
+  <span>CHAPTER 29</span>
+  <span id="progress">PRIVATE</span>
+</header>
+
+<section id="lock" class="screen active">
+  <div class="lock-card">
+    <div class="moon">🌕</div>
+    <p class="hint">🌕 Look up at the sky on a clear night...</p>
+    <h1>A little secret first</h1>
+    <p class="sub">Enter the password to open this chapter.</p>
+    <input id="password" type="password" placeholder="Password" autocomplete="off">
+    <button id="unlock" class="btn">Enter →</button>
+    <p id="error" class="error"></p>
+      <p class="password-display">Password: <strong>2917</strong></p>
+  </div>
+</section>
+
+<section id="chatScreen" class="screen">
+  <div id="chat" class="chat"></div>
+  <div id="choices" class="choices"></div>
+</section>
+
+<section id="end" class="screen">
+  <div class="song-scene">
+    <div class="floating-heart heart1">♡</div>
+    <div class="floating-heart heart2">♡</div>
+    <div class="floating-heart heart3">♡</div>
+    <div class="sparkle sp1">✦</div>
+    <div class="sparkle sp2">✧</div>
+    <div class="sparkle sp3">✦</div>
+
+    <div class="song-card">
+      <div class="vinyl-wrap">
+        <div class="vinyl">
+          <div class="vinyl-center">♫</div>
+        </div>
+        <div class="shine"></div>
+      </div>
+
+      <p class="song-eyebrow">A LITTLE SOMETHING FOR YOU</p>
+      <h1>Some things are better felt than explained. ✨</h1>
+      <p class="song-intro">
+        So instead of writing another long message...
+        I picked a song for you.
+      </p>
+
+      <div class="inline-player" id="inlinePlayer">
+        <button class="song-btn" id="playSong" type="button">
+          <span class="play" id="playIcon">▶</span>
+          <span>
+            <small>LISTEN TO THIS</small>
+            <strong>My Song For You</strong>
+          </span>
+        </button>
+
+        <div class="player-controls">
+          <span id="currentTime">0:00</span>
+          <input id="seekBar" type="range" min="0" max="100" value="0" step="0.1" aria-label="Song progress">
+          <span id="duration">0:00</span>
+        </div>
+
+        <div class="player-status" id="playerStatus">
+          Tap to play the song right here 🎧
+        </div>
+
+        <audio id="songAudio" preload="metadata">
+          <source src="assets/song.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <p class="song-note"> 🎧</p>
+    </div>
+
+    <div class="next wow-next">
+      <div class="next-line"></div>
+      <p>And just when you thought that was everything...</p>
+      <strong>Something is waiting on the next page.</strong>
+      <a class="btn" href="../chapter28/index.html">Open Chapter 28 →</a>
+    </div>
+    <div class="chapter-return-wrap"><a class="chapter-return-button" href="../../chapters.html">← Return to the 30 Chapters</a></div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</main>
+</body>
+</html>
