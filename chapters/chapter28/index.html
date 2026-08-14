@@ -1,31 +1,43 @@
-<!doctype html>
-<html lang="en">
-<head>
+<!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Chapter 28 — Your Journey</title>
-<link rel="stylesheet" href="../../css/base.css">
-<link rel="stylesheet" href="../../css/chapter.css">
-<link rel="stylesheet" href="style.css">
-</head>
-<body data-chapter="28">
-<main class="chapter-page">
-  <article class="chapter-card-shell">
-    <a class="back-link" href="../../chapters.html">← All chapters</a>
-    <div class="chapter-kicker">CHAPTER</div>
-    <div class="chapter-number">28</div>
-    <h1 class="chapter-title" id="chapterTitle">The First Memory</h1>
-    <div class="chapter-date" id="chapterDate"></div>
-    <div class="chapter-divider"></div>
-    <p class="chapter-message" id="chapterMessage">Some memories arrive softly and somehow stay forever.</p>
-    <div id="lockedNotice" hidden class="locked-notice">
-      🔒 This chapter is locked. Please return on its scheduled date.
-    </div>
-    
-    <a class="chapter-continue" href="../../chapters.html">Return to the chapter board →</a>
-  </article>
-</main>
-<script src="../../js/config.js"></script>
-<script src="../../js/utils.js"></script>
-<script src="../../js/chapter.js"></script>
-</body>
-</html>
+<title>Chapter 28 — My First Memory</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="bg"></div><div class="grain"></div>
+<header>CHAPTER 28 <button id="sound">♪</button></header>
+
+<section class="screen intro active" id="intro">
+  <small>A LITTLE MEMORY</small><h1>My First<br><i>Memory</i></h1>
+  <p>I still remember the first time I noticed you.</p>
+  <button id="begin">Begin the memory →</button>
+</section>
+
+<section class="screen show" id="show">
+  <div class="count"><b id="n">01</b> / 09</div>
+  <div class="card"><img id="pic" src="images/01-opening.jpg"><div class="shade"></div>
+    <div class="copy"><small id="tag"></small><h2 id="title"></h2><p id="desc"></p></div>
+  </div>
+  <div class="nav"><button id="prev">←</button><div id="dots"></div><button id="next">→</button></div>
+  <div class="hint">SWIPE · ARROW KEYS</div>
+</section>
+
+<section class="screen message" id="message">
+  <small>WHAT THAT MOMENT BECAME</small>
+  <h2>The person I noticed that day…</h2>
+  <p>…slowly became someone who means so much more to my life.</p>
+  <hr><h3>You are more than a friend to my life.</h3>
+  <button id="toSong">There's a song for this feeling →</button>
+</section>
+
+<section class="screen song" id="song">
+  <div class="record">♪</div><small>A SONG FOR THE MEMORY</small>
+  <h2>Some feelings<br><i>sound better.</i></h2>
+  <audio id="audio" src="s.mp3"></audio>
+  <div class="player"><button id="play">▶</button><div class="wave"></div><span id="time">00:00</span></div>
+  <button id="toEnd">Continue →</button>
+</section>
+
+<section class="screen end" id="end">
+  <div class="stars"></div><small>THE JOURNEY CONTINUES</small>
+  <div class="days">28</div><h2>DAYS TO GO</h2><p>And this is only the beginning.</p>
+  <div class="actions"><a href="chapters/chapter27/">Next Chapter →</a><a href="chapters.html">All 30 Chapters</a></div>
+</section>
+<script src="script.js"></script></body></html>
