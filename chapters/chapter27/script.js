@@ -211,14 +211,6 @@ songNext.addEventListener("click", () => {
     completeScene.classList.add("active");
 });
 
-document.getElementById("chapter26Btn").addEventListener("click", () => {
-    window.location.href = "../chapter26/index.html";
-});
-
-document.getElementById("allChaptersBtn").addEventListener("click", () => {
-    window.location.href = "../../chapters.html";
-});
-
 /* Swipe support */
 let touchStartX = 0;
 
