@@ -1,31 +1,266 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Chapter 27 — Your Journey</title>
-<link rel="stylesheet" href="../../css/base.css">
-<link rel="stylesheet" href="../../css/chapter.css">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09080d">
+    <title>Chapter 27 — Six Things I Notice About You</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body data-chapter="27">
-<main class="chapter-page">
-  <article class="chapter-card-shell">
-    <a class="back-link" href="../../chapters.html">← All chapters</a>
-    <div class="chapter-kicker">CHAPTER</div>
-    <div class="chapter-number">27</div>
-    <h1 class="chapter-title" id="chapterTitle">A Quiet Smile</h1>
-    <div class="chapter-date" id="chapterDate"></div>
-    <div class="chapter-divider"></div>
-    <p class="chapter-message" id="chapterMessage">A smile can be a whole chapter without needing many words.</p>
-    <div id="lockedNotice" hidden class="locked-notice">
-      🔒 This chapter is locked. Please return on its scheduled date.
+<body>
+
+<div class="film-grain"></div>
+
+<!-- =========================
+     SCENE 1 — INTRO
+========================= -->
+<section class="scene intro-scene active" id="introScene">
+    <div class="garden-bg">
+        <span class="leaf leaf-1"></span>
+        <span class="leaf leaf-2"></span>
+        <span class="leaf leaf-3"></span>
+        <span class="firefly f1"></span>
+        <span class="firefly f2"></span>
+        <span class="firefly f3"></span>
+        <span class="firefly f4"></span>
+        <span class="firefly f5"></span>
     </div>
-    
-    <a class="chapter-continue" href="../../chapters.html">Return to the chapter board →</a>
-  </article>
+
+    <div class="intro-copy">
+        <div class="chapter-kicker">CHAPTER 27</div>
+        <h1 class="intro-title">Six Things<br><em>I Notice About You</em></h1>
+
+        <p class="intro-line line-a">There are many beautiful things I could say about you...</p>
+        <p class="intro-line line-b">But these six always catch my attention.</p>
+
+        <button class="begin-btn hidden" id="beginBtn">Begin the chapter <span>→</span></button>
+    </div>
+</section>
+
+<!-- =========================
+     MAIN SCENES
+========================= -->
+<main id="story" aria-hidden="true">
+
+    <!-- 01 -->
+    <section class="scene point-scene scene-eyes" data-scene="0">
+        <div class="scene-bg"></div>
+        <div class="floating-light light-a"></div>
+        <div class="floating-light light-b"></div>
+
+        <div class="point-layout">
+            <div class="point-heading">
+                <span class="point-number">01</span>
+                <h2>YOUR EYES</h2>
+            </div>
+
+            <div class="art-frame">
+                <img src="images/eyes.jpg" alt="Illustration for her eyes">
+            </div>
+
+            <div class="explanation">
+<p>Your eyes have a quiet kind of beauty.</p>
+<p>They feel so soft and warm.</p>
+<p>One little look from you can say so much. 👀💗</p>
+<p>Honestly... I could keep looking at them forever. 🙈</p>
+</div>
+        </div>
+    </section>
+
+    <!-- 02 -->
+    <section class="scene point-scene scene-nose" data-scene="1">
+        <div class="scene-bg"></div>
+        <div class="petal-field"></div>
+
+        <div class="point-layout">
+            <div class="point-heading">
+                <span class="point-number">02</span>
+                <h2>THAT LITTLE NOSE PIN</h2>
+            </div>
+
+            <div class="art-frame">
+                <img src="images/nose-pin.jpg" alt="Illustration for her nose pin">
+            </div>
+
+            <div class="explanation">
+<p>That tiny nose pin? ✨</p>
+<p>It looks so cute on you. 🥰</p>
+<p>Such a small detail, but it makes your face shine. 💫</p>
+<p>I don't know how you make it look this pretty! 😍</p>
+</div>
+        </div>
+    </section>
+
+    <!-- 03 -->
+    <section class="scene point-scene scene-earrings" data-scene="2">
+        <div class="scene-bg"></div>
+        <div class="gold-bokeh"></div>
+
+        <div class="point-layout">
+            <div class="point-heading">
+                <span class="point-number">03</span>
+                <h2>YOUR EARRINGS</h2>
+            </div>
+
+            <div class="art-frame">
+                <img src="images/earrings.jpg" alt="Illustration for her earrings">
+            </div>
+
+            <div class="explanation">
+<p>Your earrings add such a lovely touch. 💎</p>
+<p>They move so softly when you smile or turn. ✨</p>
+<p>They make your whole look feel even more graceful. 🌸</p>
+<p>Simple... but absolutely beautiful. </p>
+</div>
+        </div>
+    </section>
+
+    <!-- 04 -->
+    <section class="scene point-scene scene-smile" data-scene="3">
+        <div class="scene-bg"></div>
+        <div class="lanterns"></div>
+
+        <div class="point-layout">
+            <div class="point-heading">
+                <span class="point-number">04</span>
+                <h2>YOUR SMILE</h2>
+            </div>
+
+            <div class="art-frame">
+                <img src="images/smile.jpg" alt="Illustration for her smile">
+            </div>
+
+            <div class="explanation">
+<p>And then there is your smile. 😊</p>
+<p>That smile can instantly make everything feel better. 💗</p>
+<p>It is warm, natural, and honestly a little dangerous. 😅</p>
+<p>Because once you smile, it's hard not to smile too. </p>
+</div>
+        </div>
+    </section>
+
+    <!-- 05 -->
+    <section class="scene point-scene scene-traditional" data-scene="4">
+        <div class="scene-bg"></div>
+        <div class="petals">
+            <i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+
+        <div class="point-layout">
+            <div class="point-heading">
+                <span class="point-number">05</span>
+                <h2>YOUR TRADITIONAL ELEGANCE</h2>
+            </div>
+
+            <div class="art-frame">
+                <img src="images/traditional.jpg" alt="Illustration of her in traditional attire">
+            </div>
+
+            <div class="explanation">
+<p>You look beautiful in traditional clothes. 🌸</p>
+<p>There is something so calm and elegant about it. ✨</p>
+<p>The way you carry yourself makes the whole look special. 🥰</p>
+<p>Simple, graceful, and so you. 💕</p>
+</div>
+        </div>
+    </section>
+
+    <!-- 06 -->
+    <section class="scene point-scene scene-personality" data-scene="5">
+        <div class="scene-bg"></div>
+        <div class="sunset-petals"></div>
+
+        <div class="point-layout">
+            <div class="point-heading">
+                <span class="point-number">06</span>
+                <h2>AND THEN... THERE'S YOU</h2>
+            </div>
+
+            <div class="art-frame">
+                <img src="images/personality.jpg" alt="Illustration representing her personality">
+            </div>
+
+            <div class="explanation">
+<p>But honestly... it is not just one thing. </p>
+<p>It is your whole personality. 💗</p>
+<p>Your smile, your style, your little expressions... everything comes together. ✨</p>
+<p>And that is what makes you so beautiful. ❤️</p>
+</div>
+        </div>
+    </section>
+
+    <!-- =========================
+         SCENE 8 — SONG
+    ========================= -->
+    <section class="scene song-scene" id="songScene">
+        <div class="night-sky"></div>
+
+        <div class="song-content">
+            <span class="song-kicker">A LITTLE SONG FOR THIS CHAPTER</span>
+            <h2>Stay here for a moment.</h2>
+            <p class="song-subtitle">Let the music carry the feeling forward.</p>
+
+            <div class="player">
+                <button id="playBtn" class="play-btn" aria-label="Play song">▶</button>
+                <div class="player-info">
+                    <div class="song-name">Chapter 27</div>
+                    <div class="song-time">
+                        <span id="currentTime">00:00</span>
+                        <span id="duration">--:--</span>
+                    </div>
+                    <div class="seekbar">
+                        <div id="seekFill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <audio id="chapterSong" preload="metadata">
+                <!-- Put your song in this folder and name it chapter27-song.mp3 -->
+                <source src="song.mp3" type="audio/mpeg">
+            </audio>
+
+            <button class="song-next hidden" id="songNext">Finish Chapter 27 <span>→</span></button>
+        </div>
+    </section>
+
+    <!-- =========================
+         SCENE 9 — COMPLETE
+    ========================= -->
+    <section class="scene complete-scene" id="completeScene">
+        <div class="complete-glow"></div>
+
+        <div class="complete-content">
+            <span>CHAPTER 27</span>
+            <h2>COMPLETE</h2>
+            <p>Six things I noticed.<br>And somehow, I still haven't said it all.</p>
+
+            <div class="complete-buttons">
+                <button id="chapter26Btn" type="button">Next Chapter <span>→</span></button>
+                <button id="allChaptersBtn" type="button">All Chapters <span>✦</span></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <div class="story-nav hidden" id="storyNav">
+        <button id="backBtn" aria-label="Previous scene">←</button>
+        <div class="scene-counter"><span id="sceneNumber">01</span> / 06</div>
+        <button id="nextBtn" aria-label="Next scene">→</button>
+    </div>
 </main>
-<script src="../../js/config.js"></script>
-<script src="../../js/utils.js"></script>
-<script src="../../js/chapter.js"></script>
+<!-- Add this at the VERY END of your Chapter 27 HTML,
+     just before </body> -->
+
+<div class="final-buttons">
+    <button onclick="window.location.href='../chapter26/index.html'">
+        Next Chapter →
+    </button>
+
+    <button onclick="window.location.href='../../chapters.html'">
+        All Chapters ✦
+    </button>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
