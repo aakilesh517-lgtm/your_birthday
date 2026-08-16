@@ -213,11 +213,11 @@ songNext.addEventListener("click", () => {
 
 chapter26Btn.addEventListener("click", () => {
     // Put chapter26.html in the same folder when Chapter 26 is ready.
-    window.location.href = "chapter26.html";
+    window.location.href = "../chapter26/index.html";
 });
 
 allChaptersBtn.addEventListener("click", () => {
-    window.location.href = "chapters.html";
+    window.location.href = "../../chapters.html";
 });
 
 /* Swipe support */
