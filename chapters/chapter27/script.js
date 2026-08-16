@@ -216,7 +216,7 @@ document.getElementById("chapter26Btn").addEventListener("click", () => {
 });
 
 document.getElementById("allChaptersBtn").addEventListener("click", () => {
-    window.location.href = "../chapters.html";
+    window.location.href = "../../chapters.html";
 });
 
 /* Swipe support */
