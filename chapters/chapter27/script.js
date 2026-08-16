@@ -212,11 +212,11 @@ songNext.addEventListener("click", () => {
 });
 
 document.getElementById("chapter26Btn").addEventListener("click", () => {
-    window.location.href = "../chapter28/index.html";
+    window.location.href = "../chapter26/index.html";
 });
 
 document.getElementById("allChaptersBtn").addEventListener("click", () => {
-    window.location.href = "../chapters/index.html";
+    window.location.href = "../chapters.html";
 });
 
 /* Swipe support */
