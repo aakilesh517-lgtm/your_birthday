@@ -1,12 +1,10 @@
 PART II — THE LITTLE THINGS
-BACKGROUND FIXED
 
-The garden background is loaded by the existing .background element:
-images/part2-garden-background.png
+Final flow:
+Intro → 6 details → merge reveal → final message → music card (last section).
 
-It is:
-- full screen
-- lightly blurred at 3px
-- slightly scaled to hide blur edges
-- placed behind all chapter content
-- not covered by an opaque .screen background
+MUSIC
+Place your song at:
+music/part2-song.mp3
+
+The final music card is designed as a soft translucent glass card for the light garden background.

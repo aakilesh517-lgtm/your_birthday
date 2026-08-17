@@ -821,3 +821,442 @@ body {
   /* Existing colors remain; this rule only prevents accidental page-wide cover. */
 }
 
+
+/* --------------------------------------------------
+   FINAL MUSIC CARD
+   -------------------------------------------------- */
+
+.music-screen {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 34px 20px;
+  box-sizing: border-box;
+}
+
+.music-card {
+  position: relative;
+  width: min(560px, 92vw);
+  padding: 46px 42px 40px;
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid rgba(133, 105, 82, .22);
+  border-radius: 30px;
+  background: rgba(255, 251, 241, .72);
+  box-shadow: 0 24px 70px rgba(89, 68, 50, .18);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  transform: translateY(26px);
+  opacity: 0;
+}
+
+.music-screen.active .music-card {
+  animation: musicCardIn 1s .15s cubic-bezier(.18,.82,.22,1) forwards;
+}
+
+.music-glow {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  top: -125px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: rgba(244, 210, 142, .35);
+  filter: blur(18px);
+}
+
+.music-eyebrow {
+  position: relative;
+  display: block;
+  font-family: "Playfair Display", serif;
+  font-size: .7rem;
+  letter-spacing: .24em;
+  color: #8d6b51;
+}
+
+.music-icon {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: 20px auto 14px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fffaf1;
+  background: #8f6956;
+  box-shadow: 0 10px 28px rgba(100, 69, 52, .2);
+  font-size: 1.7rem;
+}
+
+.music-card h2 {
+  position: relative;
+  margin: 0;
+  font-family: "Caveat", cursive;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 500;
+  color: #584038;
+}
+
+.music-card > p {
+  position: relative;
+  max-width: 430px;
+  margin: 8px auto 28px;
+  font-family: "Caveat", cursive;
+  font-size: 1.35rem;
+  line-height: 1.45;
+  color: #70564b;
+}
+
+.music-player {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 16px;
+  text-align: left;
+  border: 1px solid rgba(133, 105, 82, .18);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .42);
+}
+
+.music-play {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fffaf1;
+  background: #8f6956;
+  box-shadow: 0 7px 18px rgba(100, 69, 52, .18);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.music-play:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 24px rgba(100, 69, 52, .25);
+}
+
+.music-track {
+  min-width: 0;
+  flex: 1;
+}
+
+.track-title,
+.track-subtitle {
+  display: block;
+}
+
+.track-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: "Playfair Display", serif;
+  font-size: .9rem;
+  color: #594238;
+}
+
+.track-subtitle {
+  margin-top: 3px;
+  font-family: "Caveat", cursive;
+  font-size: .95rem;
+  color: #8d7568;
+}
+
+.track-subtitle code {
+  font-family: inherit;
+  color: #79594b;
+}
+
+.music-progress {
+  height: 3px;
+  margin-top: 9px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(141, 107, 81, .15);
+}
+
+.music-progress span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background: #a77b5d;
+  transition: width .15s linear;
+}
+
+@keyframes musicCardIn {
+  from { opacity: 0; transform: translateY(26px) scale(.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 520px) {
+  .music-card {
+    padding: 38px 20px 28px;
+    border-radius: 24px;
+  }
+
+  .music-player {
+    gap: 10px;
+    padding: 12px;
+  }
+}
+
+
+/* =========================================================
+   FINAL NAVIGATION
+   ========================================================= */
+
+.visit-music-button {
+  position: absolute;
+  z-index: 7;
+  left: 50%;
+  bottom: 6vh;
+  transform: translateX(-50%) translateY(14px);
+  opacity: 0;
+
+  padding: 12px 22px;
+  border: 1px solid rgba(118,86,76,.28);
+  border-radius: 999px;
+  background: rgba(255,250,239,.78);
+  color: #5a4038;
+  box-shadow: 0 10px 30px rgba(73,55,40,.12);
+  backdrop-filter: blur(8px);
+
+  font: inherit;
+  cursor: pointer;
+  transition: transform .25s ease, background .25s ease;
+}
+
+.combination-screen.active .visit-music-button {
+  animation: musicButtonIn .8s 3.85s forwards;
+}
+
+.visit-music-button:hover {
+  transform: translateX(-50%) translateY(-2px);
+  background: rgba(255,250,239,.95);
+}
+
+.music-chapter-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.music-screen.music-complete .music-chapter-actions {
+  animation: musicButtonIn .8s .65s forwards;
+}
+
+@keyframes musicButtonIn {
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Override transform for navigation inside music card */
+.music-screen.music-complete .music-chapter-actions {
+  transform: translateY(12px);
+}
+
+@keyframes musicActionsIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.music-screen.music-complete .music-chapter-actions {
+  animation: musicActionsIn .8s .65s forwards;
+}
+
+@media (max-width: 520px) {
+  .visit-music-button {
+    bottom: 4vh;
+  }
+
+  .music-chapter-actions .chapter-button {
+    padding: 9px 15px;
+    font-size: .9rem;
+  }
+}
+
+
+/* =========================================================
+   MUSIC NAVIGATION — FIXED VISIBLE VERSION
+   ========================================================= */
+
+.music-chapter-actions {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+.music-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 140px;
+    padding: 11px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-family: "Caveat", cursive;
+    font-size: 1.2rem;
+    line-height: 1;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.music-nav-btn.next-btn {
+    color: #fffaf3 !important;
+    background: #76564c !important;
+    border: 1px solid #76564c !important;
+}
+
+.music-nav-btn.all-btn {
+    color: #654b42 !important;
+    background: rgba(255,250,240,.86) !important;
+    border: 1px solid rgba(105,78,68,.3) !important;
+}
+
+.music-nav-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(85,61,52,.18);
+}
+
+.music-nav-btn span {
+    display: inline-block;
+    transition: transform .25s ease;
+}
+
+.music-nav-btn.next-btn:hover span {
+    transform: translateX(4px);
+}
+
+@media (max-width: 600px) {
+    .music-chapter-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .music-nav-btn {
+        width: min(230px, 82vw);
+    }
+}
+
+
+/* =========================================================
+   MUSIC FINAL BUTTONS — HIDDEN UNTIL SONG COMPLETES
+   ========================================================= */
+
+.music-chapter-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+
+    /* NEVER visible before the song finishes */
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(18px);
+}
+
+.music-screen.music-complete .music-chapter-actions {
+    visibility: visible;
+    pointer-events: auto;
+    animation: musicButtonsAppear 0.9s ease forwards;
+}
+
+.music-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-width: 135px;
+    padding: 11px 20px;
+
+    border-radius: 50px;
+    text-decoration: none;
+
+    font-family: "Caveat", cursive;
+    font-size: 1.2rem;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.next-btn {
+    color: #fffaf3;
+    background: rgba(105, 78, 68, 0.92);
+    border: 1px solid rgba(105, 78, 68, 0.5);
+    box-shadow: 0 8px 22px rgba(85, 61, 52, 0.18);
+}
+
+.all-btn {
+    color: #654b42;
+    background: rgba(255, 250, 240, 0.78);
+    border: 1px solid rgba(105, 78, 68, 0.25);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 22px rgba(85, 61, 52, 0.10);
+}
+
+.music-nav-btn:hover {
+    transform: translateY(-4px);
+}
+
+.next-btn:hover {
+    background: rgba(85, 61, 52, 1);
+}
+
+.all-btn:hover {
+    background: rgba(255, 250, 240, 0.98);
+}
+
+.next-btn span {
+    transition: transform .3s ease;
+}
+
+.next-btn:hover span {
+    transform: translateX(4px);
+}
+
+@keyframes musicButtonsAppear {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .music-chapter-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .music-nav-btn {
+        width: min(230px, 80vw);
+    }
+}

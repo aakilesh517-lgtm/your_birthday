@@ -128,6 +128,9 @@ nextButton.addEventListener("click", () => {
 
   setTimeout(() => {
     combinationScreen.classList.add("active");
+
+    // Let the merge and final reveal finish before showing the music card.
+    setTimeout(showMusicCard, 7200);
   }, 500);
 });
 
@@ -152,4 +155,91 @@ if (finalGirl) {
   };
   finalTest.onerror = () => {};
   finalTest.src = "images/traditional-girl-final.png";
+}
+
+
+/* ================================
+   FINAL MUSIC CARD
+   ================================ */
+
+const musicScreen = document.getElementById("musicScreen");
+const musicPlay = document.getElementById("musicPlay");
+const musicPlayIcon = document.getElementById("musicPlayIcon");
+const journeyMusic = document.getElementById("journeyMusic");
+const musicProgress = document.getElementById("musicProgress");
+
+if (musicPlay && journeyMusic) {
+  musicPlay.addEventListener("click", async () => {
+    if (journeyMusic.paused) {
+      try {
+        await journeyMusic.play();
+        musicPlayIcon.textContent = "Ⅱ";
+      } catch (error) {
+        musicPlayIcon.textContent = "▶";
+      }
+    } else {
+      journeyMusic.pause();
+      musicPlayIcon.textContent = "▶";
+    }
+  });
+
+  journeyMusic.addEventListener("timeupdate", () => {
+    if (!journeyMusic.duration) return;
+    musicProgress.style.width =
+      `${(journeyMusic.currentTime / journeyMusic.duration) * 100}%`;
+  });
+
+  journeyMusic.addEventListener("ended", () => {
+    musicPlayIcon.textContent = "▶";
+    musicProgress.style.width = "0%";
+  });
+}
+
+function showMusicCard() {
+  if (!musicScreen) return;
+  combinationScreen.classList.remove("active");
+  musicScreen.classList.add("active");
+}
+
+
+/* =========================================================
+   VISIT MUSIC CARD NAVIGATION
+   ========================================================= */
+
+const visitMusicButton = document.getElementById("visitMusicButton");
+
+if (visitMusicButton && musicScreen) {
+  visitMusicButton.addEventListener("click", () => {
+    combinationScreen.classList.remove("active");
+
+    setTimeout(() => {
+      musicScreen.classList.add("active");
+    }, 300);
+  });
+}
+
+
+/* =========================================================
+   SHOW NEXT CHAPTER / ALL CHAPTERS ONLY AFTER MUSIC ENDS
+   ========================================================= */
+
+const finalMusicSection = document.getElementById("musicScreen");
+const finalMusic = document.getElementById("journeyMusic");
+const musicChapterActions = document.getElementById("musicChapterActions");
+
+if (finalMusicSection && finalMusic && musicChapterActions) {
+    // Keep the final navigation hidden until the song is completely finished.
+    finalMusicSection.classList.remove("music-complete");
+
+    finalMusic.addEventListener("ended", () => {
+        finalMusicSection.classList.add("music-complete");
+
+        // Make the buttons visible and bring them into view.
+        requestAnimationFrame(() => {
+            musicChapterActions.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        });
+    });
 }

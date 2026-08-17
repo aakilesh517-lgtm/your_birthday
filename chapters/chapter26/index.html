@@ -99,18 +99,49 @@
         <strong>make you unforgettable.</strong>
       </div>
 
-      <div class="chapter-actions" id="chapterActions">
-        <a href="../chapter25/index.html" class="chapter-button primary">
-          Next Chapter <span>→</span>
-        </a>
-        <a href="../../chapters.html" class="chapter-button">
-          All Chapters
-        </a>
-      </div>
+      <button class="visit-music-button" id="visitMusicButton" type="button">
+        🎵 listen this
+      </button>
     </section>
 
-  </main>
+    <!-- 09 FINAL MUSIC CARD -->
+    <section class="screen music-screen" id="musicScreen">
+      <div class="music-card">
+        <div class="music-glow"></div>
+        <span class="music-eyebrow">ONE LAST LITTLE THING</span>
+        <div class="music-icon" aria-hidden="true">♫</div>
+        <h2>A song for this moment</h2>
+        <p>Some moments are beautiful enough to have their own soundtrack.</p>
+
+        <div class="music-player">
+          <button class="music-play" id="musicPlay" type="button" aria-label="Play music">
+            <span id="musicPlayIcon">▶</span>
+          </button>
+          <div class="music-track">
+            <span class="track-title">A little melody, just for you</span>
+            <div class="music-progress"><span id="musicProgress"></span></div>
+          </div>
+        </div>
+
+        <audio id="journeyMusic" preload="metadata" src="music/song.mp3"></audio>
+      </div>
+    <div class="music-chapter-actions" id="musicChapterActions">
+
+    <a href="../chapter27/index.html" class="music-nav-btn next-btn">
+        Next Chapter
+        <span>→</span>
+    </a>
+
+    <a href="../chapters.html" class="music-nav-btn all-btn">
+        All Chapters
+    </a>
+
+</div>
+      </section>
+
 
   <script src="script.js"></script>
 </body>
 </html>
+    
+
