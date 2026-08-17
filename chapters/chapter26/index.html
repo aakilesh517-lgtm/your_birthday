@@ -1,31 +1,116 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Chapter 26 — Your Journey</title>
-<link rel="stylesheet" href="../../css/base.css">
-<link rel="stylesheet" href="../../css/chapter.css">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#eee4d3">
+  <title>Part II — The Little Things</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body data-chapter="26">
-<main class="chapter-page">
-  <article class="chapter-card-shell">
-    <a class="back-link" href="../../chapters.html">← All chapters</a>
-    <div class="chapter-kicker">CHAPTER</div>
-    <div class="chapter-number">26</div>
-    <h1 class="chapter-title" id="chapterTitle">Something Beautiful</h1>
-    <div class="chapter-date" id="chapterDate"></div>
-    <div class="chapter-divider"></div>
-    <p class="chapter-message" id="chapterMessage">The beautiful parts are often hidden inside ordinary days.</p>
-    <div id="lockedNotice" hidden class="locked-notice">
-      🔒 This chapter is locked. Please return on its scheduled date.
+
+<body>
+  <div class="background" aria-hidden="true"></div>
+  <main class="journey">
+
+    <!-- Clean environment. Add the final garden image later. -->
+    <div class="soft-light" ></div>
+    <div class="air-leaves" >
+      <i></i><i></i><i></i><i></i><i></i>
     </div>
-    
-    <a class="chapter-continue" href="../../chapters.html">Return to the chapter board →</a>
-  </article>
-</main>
-<script src="../../js/config.js"></script>
-<script src="../../js/utils.js"></script>
-<script src="../../js/chapter.js"></script>
+
+    <!-- 01 INTRO -->
+    <section class="screen intro-screen active" id="introScreen">
+      <div class="intro-card">
+        <span class="eyebrow">PART II</span>
+        <h1>The Little Things</h1>
+        <span class="divider">✦</span>
+        <p>Some details are small...</p>
+        <p>but somehow, they make you even more beautiful.</p>
+
+        <button class="begin-button" id="beginButton">
+          Let's begin <span>→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 02 — 07 SIX POINTS -->
+    <section class="screen moments-screen" id="momentsScreen">
+
+      <div class="moment-layout">
+
+        <div class="image-area">
+          <!-- Images will be added later. -->
+          <div class="image-placeholder" id="imagePlaceholder">
+            <span>Image</span>
+          </div>
+          <img id="momentImage" class="moment-image" src="" alt="">
+        </div>
+
+        <div class="story-area">
+          <span class="point-number" id="pointNumber">01</span>
+          <h2 id="pointTitle">Earrings</h2>
+          <div class="tiny-divider">✦</div>
+          <p class="handwriting" id="pointText"></p>
+
+          <button class="next-button" id="nextButton" aria-label="Next">
+            <span>→</span>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="progress" id="progress">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </section>
+
+    <!-- 08 FINAL COMBINATION -->
+    <section class="screen combination-screen" id="combinationScreen">
+
+      <div class="merge-scene" aria-hidden="true">
+        <div class="merge-piece piece-1"><img src="images/01-earrings.png" alt="Earrings detail"></div>
+        <div class="merge-piece piece-2"><img src="images/02-bangles.png" alt="Bangles detail"></div>
+        <div class="merge-piece piece-3"><img src="images/03-bindi.png" alt="Bindi detail"></div>
+        <div class="merge-piece piece-4"><img src="images/04-anklets.png" alt="Anklets detail"></div>
+        <div class="merge-piece piece-5"><img src="images/05-flowers-in-hair.png" alt="Flowers in hair detail"></div>
+        <div class="merge-piece piece-6"><img src="images/06-saree.png" alt="Saree detail"></div>
+        <div class="merge-core"></div>
+        <div class="merge-flash"></div>
+      </div>
+
+      <div class="girl-area">
+        <div class="girl-placeholder">
+          <span>Final image</span>
+        </div>
+        <img id="girlImage" src="" alt="Traditional girl" class="girl-image">
+      </div>
+
+      <div class="final-message" id="finalMessage">
+        <p>And somehow...</p>
+        <h2>all those little things together</h2>
+        <strong>make you unforgettable.</strong>
+      </div>
+
+      <div class="chapter-actions" id="chapterActions">
+        <a href="../chapter25/index.html" class="chapter-button primary">
+          Next Chapter <span>→</span>
+        </a>
+        <a href="../../chapters.html" class="chapter-button">
+          All Chapters
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
